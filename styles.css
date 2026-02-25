@@ -79,7 +79,7 @@ body {
 .page-wrapper {
     position: relative;
     background:
-        url('assets/Glass Rainbow 9 4K.jpg') center top / cover no-repeat fixed;
+        url('assets/background.jpg') center top / cover no-repeat fixed;
 }
 
 /* Static overlay removed — per-section tint used instead */
