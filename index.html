@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RISE 2026 — Research, Innovation, Society & Entrepreneurship</title>
     <meta name="description"
         content="RISE 2026 Open House at IIIT-Bangalore. Experience cutting-edge research, innovation, and entrepreneurship.">
@@ -19,10 +19,13 @@
 
 <body>
 
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">RISE 2026</a>
+            <a href="#" class="nav-logo"><img src="assets/RISE 2026 Text logo.png" alt="RISE 2026"></a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
@@ -39,267 +42,333 @@
     </nav>
     <div class="nav-overlay" id="navOverlay"></div>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="hero-cta">
-                <a href="#" class="btn-register" id="registerBtn">Register Now</a>
-                <a href="#" class="banner-link">Internships & MS-PhD Admissions</a>
-            </div>
-        </div>
-    </section>
+    <!-- ===== PAGE WRAPPER (shared background) ===== -->
+    <div class="page-wrapper">
+        <div class="page-overlay" id="pageOverlay"></div>
 
-    <!-- ===== ABOUT SECTION ===== -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About <span class="highlight">RISE 2026</span></h2>
-            <p class="about-text">
-                RISE (Research, Innovation, Society & Entrepreneurship) is IIIT-Bangalore's flagship annual open house
-                event
-                that brings together researchers, industry leaders, students, and innovators. Explore cutting-edge
-                research across
-                multiple domains, interact with leading researchers, and discover opportunities for collaboration and
-                growth.
-            </p>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">20+</span>
-                    <span class="stat-label">Research Labs</span>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero" id="home">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="hero-logos">
+                    <img src="assets/logo--white.png" alt="IIIT-Bangalore Logo" class="hero-logo">
+                    <img src="assets/RISE 2026 Open House logo.png" alt="RISE 2026 Logo"
+                        class="hero-logo hero-logo-rise">
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Participants</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">80+</span>
-                    <span class="stat-label">Posters</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== KEYNOTE SECTION ===== -->
-    <section class="keynote" id="keynote">
-        <div class="container">
-            <h2 class="section-title">Keynote <span class="highlight">Speaker</span></h2>
-            <div class="keynote-card">
-                <div class="keynote-image">
-                    <div class="keynote-placeholder-img"></div>
-                    <div class="keynote-image-overlay"></div>
-                </div>
-                <div class="keynote-info">
-                    <h3 class="keynote-name">Ms. Suma Varughese</h3>
-                    <p class="keynote-title">Director General, DRDO</p>
-                    <p class="keynote-bio">
-                        Ms. Suma Varughese is the Director General of the Defence Research and Development Organisation
-                        (DRDO).
-                        With decades of experience in defense technology and innovation, she brings invaluable insights
-                        into
-                        the intersection of research, technology, and national development. Her keynote will explore the
-                        future
-                        of research and innovation in India.
-                    </p>
-                    <div class="keynote-tags">
-                        <span class="tag">Defence Research</span>
-                        <span class="tag">Innovation</span>
-                        <span class="tag">Technology Leadership</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SCHEDULE/TIMELINE SECTION ===== -->
-    <section class="schedule" id="schedule">
-        <div class="container">
-            <h2 class="section-title">Event <span class="highlight">Timeline</span></h2>
-            <p class="section-subtitle">February 22, 2026 — A day of discovery and innovation</p>
-            <div class="timeline" id="timeline">
-                <!-- Dynamically populated from schedule.json -->
-                <div class="timeline-loading">
-                    <div class="spinner"></div>
-                    <p>Loading schedule...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== WORKSHOPS SECTION ===== -->
-    <section class="workshops" id="workshops">
-        <div class="container">
-            <h2 class="section-title">Workshops & <span class="highlight">Sessions</span></h2>
-            <p class="section-subtitle">Explore diverse research tracks and interactive sessions</p>
-            <div class="workshops-grid">
-                <div class="workshop-card" data-color="blue">
-                    <div class="workshop-icon">🧬</div>
-                    <h3 class="workshop-title">CAGS</h3>
-                    <p class="workshop-desc">Centre for Accessibility in the Global South — Research on accessible and
-                        inclusive technology solutions</p>
-                    <div class="workshop-meta">
-                        <span>02:30 PM onwards</span>
-                        <span>Lab Sessions</span>
-                    </div>
-                </div>
-                <div class="workshop-card" data-color="purple">
-                    <div class="workshop-icon">⚛️</div>
-                    <h3 class="workshop-title">Physics & Mathematics</h3>
-                    <p class="workshop-desc">Cutting-edge research in theoretical and applied physics, mathematical
-                        modeling and computational sciences</p>
-                    <div class="workshop-meta">
-                        <span>02:30 PM onwards</span>
-                        <span>Lab Sessions</span>
-                    </div>
-                </div>
-                <div class="workshop-card" data-color="cyan">
-                    <div class="workshop-icon">🏥</div>
-                    <h3 class="workshop-title">EHRC</h3>
-                    <p class="workshop-desc">Electronics Health Research Centre — Innovations in healthcare technology
-                        and biomedical engineering</p>
-                    <div class="workshop-meta">
-                        <span>02:30 PM onwards</span>
-                        <span>Lab Sessions</span>
-                    </div>
-                </div>
-                <div class="workshop-card" data-color="emerald">
-                    <div class="workshop-icon">💻</div>
-                    <h3 class="workshop-title">CSE Showcase</h3>
-                    <p class="workshop-desc">Computer Science & Engineering department showcasing AI, ML, Systems, and
-                        Software Engineering research</p>
-                    <div class="workshop-meta">
-                        <span>02:30 PM onwards</span>
-                        <span>Presentations</span>
-                    </div>
-                </div>
-                <div class="workshop-card" data-color="amber">
-                    <div class="workshop-icon">🔐</div>
-                    <h3 class="workshop-title">Cybersecurity</h3>
-                    <p class="workshop-desc">Research in network security, cryptography, and privacy-preserving
-                        technologies</p>
-                    <div class="workshop-meta">
-                        <span>02:30 PM onwards</span>
-                        <span>Workshop</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== GALLERY SECTION ===== -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <h2 class="section-title">Glimpse of <span class="highlight">RISE 2026</span></h2>
-            <p class="section-subtitle">Highlights from last year's event</p>
-            <div class="gallery-grid" id="galleryGrid">
-                <div class="gallery-item large">
-                    <div class="gallery-placeholder" style="--hue: 220;">
-                        <span>Research Exhibition</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder" style="--hue: 260;">
-                        <span>Poster Session</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder" style="--hue: 200;">
-                        <span>Keynote Talk</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder" style="--hue: 280;">
-                        <span>Workshop Demo</span>
-                    </div>
-                </div>
-                <div class="gallery-item large">
-                    <div class="gallery-placeholder" style="--hue: 240;">
-                        <span>Networking Event</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder" style="--hue: 300;">
-                        <span>Lab Tour</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FAQ SECTION ===== -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What is RISE 2026?</span>
-                        <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9" />
+                <div class="hero-info">
+                    <span class="hero-info-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
                         </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>RISE (Research, Innovation, Society & Entrepreneurship) is IIIT-Bangalore's annual open house
-                            event showcasing the institute's research activities, innovations, and collaborations across
-                            multiple domains.</p>
+                        March 14, 2026
+                    </span>
+                    <span class="hero-info-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        IIIT-Bangalore Campus
+                    </span>
+                </div>
+
+                <!-- Countdown Timer -->
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-days">--</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-hours">--</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-minutes">--</span>
+                        <span class="countdown-label">Mins</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-seconds">--</span>
+                        <span class="countdown-label">Secs</span>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Who can attend?</span>
-                        <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>RISE 2026 is open to everyone — students, researchers, industry professionals, and anyone
-                            interested in technology and innovation. Registration is required for entry.</p>
-                    </div>
+
+                <div class="hero-cta">
+                    <a href="https://example.com/register" class="btn-register" id="registerBtn">Register Now</a>
+                    <a href="https://www.iiitb.ac.in/courses/integrated-mtech-and-phd-program" target="_blank"
+                        class="banner-link">Internships & MS-PhD Admissions →</a>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Where is the event held?</span>
-                        <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>RISE 2026 is held at the IIIT-Bangalore campus, located at 26/C, Electronics City, Hosur
-                            Road, Bengaluru, Karnataka 560100.</p>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT SECTION ===== -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">About <span class="highlight">RISE 2026</span></h2>
+                <p class="about-text">
+                    RISE (Research, Innovation, Society & Entrepreneurship) is IIIT-Bangalore's flagship annual open
+                    house
+                    event
+                    that brings together researchers, industry leaders, students, and innovators. Explore cutting-edge
+                    research across
+                    multiple domains, interact with leading researchers, and discover opportunities for collaboration
+                    and
+                    growth.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Research Labs</span>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Is there a registration fee?</span>
-                        <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No, RISE 2026 is a free event. However, prior registration is mandatory for entry. Please
-                            register using the "Register Now" button on this page.</p>
+                    <div class="stat-card">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Participants</span>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How can I participate as a poster presenter?</span>
-                        <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Poster presentations are currently open for IIIT-B research scholars and students. If you're
-                            interested in presenting your research, please contact the organizing committee through the
-                            official channels.</p>
+                    <div class="stat-card">
+                        <span class="stat-number">80+</span>
+                        <span class="stat-label">Posters</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ===== KEYNOTE SECTION ===== -->
+        <section class="keynote" id="keynote">
+            <div class="container">
+                <h2 class="section-title">Keynote <span class="highlight">Speaker</span></h2>
+                <div class="keynote-card">
+                    <div class="keynote-image">
+                        <img src="assets/sponsors/Keynote.jpg" alt="Ms. Suma Varughese">
+                        <div class="keynote-image-overlay"></div>
+                    </div>
+                    <div class="keynote-info">
+                        <h3 class="keynote-name">Ms. Suma Varughese</h3>
+                        <p class="keynote-title">Director General, DRDO</p>
+                        <p class="keynote-bio">
+                            Ms. Suma Varughese is the Director General of the Defence Research and Development
+                            Organisation
+                            (DRDO).
+                            With decades of experience in defense technology and innovation, she brings invaluable
+                            insights
+                            into
+                            the intersection of research, technology, and national development. Her keynote will explore
+                            the
+                            future
+                            of research and innovation in India.
+                        </p>
+                        <div class="keynote-tags">
+                            <span class="tag">Defence Research</span>
+                            <span class="tag">Innovation</span>
+                            <span class="tag">Technology Leadership</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SCHEDULE/TIMELINE SECTION ===== -->
+        <section class="schedule" id="schedule">
+            <div class="container">
+                <h2 class="section-title">Event <span class="highlight">Timeline</span></h2>
+                <p class="section-subtitle">March 14, 2026 — A day of discovery and innovation</p>
+                <div class="timeline" id="timeline">
+                    <!-- Dynamically populated from schedule.json -->
+                    <div class="timeline-loading">
+                        <div class="spinner"></div>
+                        <p>Loading schedule...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WORKSHOPS SECTION ===== -->
+        <section class="workshops" id="workshops">
+            <div class="container">
+                <h2 class="section-title">Workshops & <span class="highlight">Sessions</span></h2>
+                <p class="section-subtitle">Explore diverse research tracks and interactive sessions</p>
+                <div class="workshops-grid">
+                    <div class="workshop-card" data-color="blue">
+                        <div class="workshop-icon">🧬</div>
+                        <h3 class="workshop-title">CAGS</h3>
+                        <p class="workshop-desc">Centre for Accessibility in the Global South — Research on accessible
+                            and
+                            inclusive technology solutions</p>
+                        <div class="workshop-meta">
+                            <span>02:30 PM onwards</span>
+                            <span>Lab Sessions</span>
+                        </div>
+                    </div>
+                    <div class="workshop-card" data-color="purple">
+                        <div class="workshop-icon">⚛️</div>
+                        <h3 class="workshop-title">Physics & Mathematics</h3>
+                        <p class="workshop-desc">Cutting-edge research in theoretical and applied physics, mathematical
+                            modeling and computational sciences</p>
+                        <div class="workshop-meta">
+                            <span>02:30 PM onwards</span>
+                            <span>Lab Sessions</span>
+                        </div>
+                    </div>
+                    <div class="workshop-card" data-color="cyan">
+                        <div class="workshop-icon">🏥</div>
+                        <h3 class="workshop-title">EHRC</h3>
+                        <p class="workshop-desc">Electronics Health Research Centre — Innovations in healthcare
+                            technology
+                            and biomedical engineering</p>
+                        <div class="workshop-meta">
+                            <span>02:30 PM onwards</span>
+                            <span>Lab Sessions</span>
+                        </div>
+                    </div>
+                    <div class="workshop-card" data-color="emerald">
+                        <div class="workshop-icon">💻</div>
+                        <h3 class="workshop-title">CSE Showcase</h3>
+                        <p class="workshop-desc">Computer Science & Engineering department showcasing AI, ML, Systems,
+                            and
+                            Software Engineering research</p>
+                        <div class="workshop-meta">
+                            <span>02:30 PM onwards</span>
+                            <span>Presentations</span>
+                        </div>
+                    </div>
+                    <div class="workshop-card" data-color="amber">
+                        <div class="workshop-icon">🔐</div>
+                        <h3 class="workshop-title">Cybersecurity</h3>
+                        <p class="workshop-desc">Research in network security, cryptography, and privacy-preserving
+                            technologies</p>
+                        <div class="workshop-meta">
+                            <span>02:30 PM onwards</span>
+                            <span>Workshop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GALLERY SECTION ===== -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <h2 class="section-title">Glimpse of <span class="highlight">RISE 2026</span></h2>
+                <p class="section-subtitle">Highlights from last year's event</p>
+                <div class="gallery-grid" id="galleryGrid">
+                    <div class="gallery-item large">
+                        <img src="assets/glimpse/pic1.jpg" alt="RISE 2025 Highlights" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/glimpse/pic2.jpg" alt="RISE 2025 Poster Session" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/glimpse/pic3.jpg" alt="RISE 2025 Keynote Talk" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/glimpse/pic5.jpg" alt="RISE 2025 Workshop Demo" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ SECTION ===== -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is RISE 2026?</span>
+                            <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>RISE (Research, Innovation, Society & Entrepreneurship) is IIIT-Bangalore's annual open
+                                house
+                                event showcasing the institute's research activities, innovations, and collaborations
+                                across
+                                multiple domains.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Who can attend?</span>
+                            <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>RISE 2026 is open to everyone — students, researchers, industry professionals, and anyone
+                                interested in technology and innovation. Registration is required for entry.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Where is the event held?</span>
+                            <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>RISE 2026 is held at the IIIT-Bangalore campus, located at 26/C, Electronics City, Hosur
+                                Road, Bengaluru, Karnataka 560100.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is there a registration fee?</span>
+                            <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, RISE 2026 is a free event. However, prior registration is mandatory for entry. Please
+                                register using the "Register Now" button on this page.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How can I participate as a poster presenter?</span>
+                            <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Poster presentations are currently open for IIIT-B research scholars and students. If
+                                you're
+                                interested in presenting your research, please contact the organizing committee through
+                                the
+                                official channels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SPONSORS SECTION ===== -->
+        <section class="sponsors" id="sponsors">
+            <div class="container">
+                <h2 class="section-title">Our <span class="highlight">Partners</span></h2>
+                <p class="section-subtitle">Proudly supported by</p>
+                <div class="sponsors-grid">
+                    <div class="sponsor-item">
+                        <img src="assets/sponsors/CAGS.png" alt="CAGS" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsors/COMET.png" alt="COMET" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsors/EHRC.png" alt="EHRC" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- end page-wrapper -->
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">

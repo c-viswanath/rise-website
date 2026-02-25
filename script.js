@@ -1,14 +1,60 @@
 /* ========================================
-   RISE 2025 — Main Script (jQuery)
+   RISE 2026 — Main Script (jQuery)
    ======================================== */
 
 $(document).ready(function () {
 
+    // ===== CURSOR GLOW =====
+    const $glow = $('#cursorGlow');
 
+    $(document).on('mousemove', function (e) {
+        $glow.css({
+            left: e.clientX + 'px',
+            top: e.clientY + 'px'
+        });
+        if (!$glow.hasClass('visible')) {
+            $glow.addClass('visible');
+        }
+    });
+
+    $(document).on('mouseleave', function () {
+        $glow.removeClass('visible');
+    });
+
+    // ===== COUNTDOWN TIMER =====
+    function updateCountdown() {
+        const eventDate = new Date('March 14, 2026 09:00:00').getTime();
+        const now = new Date().getTime();
+        const gap = eventDate - now;
+
+        if (gap <= 0) {
+            $('#countdown-days').text('0');
+            $('#countdown-hours').text('0');
+            $('#countdown-minutes').text('0');
+            $('#countdown-seconds').text('0');
+            return;
+        }
+
+        const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((gap % (1000 * 60)) / 1000);
+
+        $('#countdown-days').text(days);
+        $('#countdown-hours').text(hours);
+        $('#countdown-minutes').text(minutes);
+        $('#countdown-seconds').text(seconds);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
     // ===== NAVBAR SCROLL EFFECT =====
     $(window).on('scroll', function () {
-        if ($(window).scrollTop() > 80) {
+        const scrollTop = $(window).scrollTop();
+
+        // Navbar
+        if (scrollTop > 80) {
             $('#navbar').addClass('scrolled');
         } else {
             $('#navbar').removeClass('scrolled');
@@ -141,7 +187,7 @@ $(document).ready(function () {
     }
 
     // Add fade-in class to elements
-    $('.stat-card, .workshop-card, .gallery-item, .faq-item, .keynote-card').addClass('fade-in');
+    $('.stat-card, .workshop-card, .gallery-item, .faq-item, .keynote-card, .sponsor-item').addClass('fade-in');
 
     // Observe all fade-in elements
     observeElements('.fade-in');
