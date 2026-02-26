@@ -1,5 +1,10 @@
 /* ========================================
    RISE 2026 — Main Script (jQuery)
+
+   All section data is loaded from data/*.js files
+   via global variables (SCHEDULE_DATA, WORKSHOPS_DATA,
+   FAQ_DATA, SPONSORS_DATA). These are included as
+   <script> tags in the HTML before this file.
    ======================================== */
 
 $(document).ready(function () {
@@ -109,64 +114,6 @@ $(document).ready(function () {
         }
     });
 
-    // ===== LOAD SCHEDULE FROM JSON =====
-    $.getJSON('schedule.json', function (data) {
-        const $timeline = $('#timeline');
-        $timeline.empty(); // Remove loading spinner
-
-        if (data.schedule && data.schedule.length > 0) {
-            $.each(data.schedule, function (index, item) {
-                const card = `
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-card">
-                            <div class="timeline-time">${item.time}</div>
-                            <h3 class="timeline-title">
-                                <span class="emoji">${item.icon || ''}</span>
-                                ${item.title}
-                            </h3>
-                            <p class="timeline-desc">${item.description}</p>
-                            <span class="timeline-location">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                                ${item.location}
-                            </span>
-                        </div>
-                    </div>
-                `;
-                $timeline.append(card);
-            });
-
-            // Trigger fade-in animations for schedule items
-            observeElements('.timeline-item.fade-in');
-        }
-    }).fail(function () {
-        $('#timeline').html(`
-            <div style="text-align:center; padding: 40px; color: #94a3b8;">
-                <p>Unable to load schedule. Please try refreshing the page.</p>
-            </div>
-        `);
-    });
-
-    // ===== FAQ ACCORDION =====
-    $('.faq-question').on('click', function () {
-        const $item = $(this).parent('.faq-item');
-        const $answer = $item.find('.faq-answer');
-        const isActive = $item.hasClass('active');
-
-        // Close all
-        $('.faq-item').removeClass('active');
-        $('.faq-answer').css('max-height', '0');
-
-        // Open clicked if it wasn't active
-        if (!isActive) {
-            $item.addClass('active');
-            $answer.css('max-height', $answer[0].scrollHeight + 'px');
-        }
-    });
-
     // ===== SCROLL ANIMATIONS (Intersection Observer) =====
     function observeElements(selector) {
         const observer = new IntersectionObserver(function (entries) {
@@ -186,10 +133,151 @@ $(document).ready(function () {
         });
     }
 
-    // Add fade-in class to elements
-    $('.stat-card, .workshop-card, .gallery-item, .faq-item, .keynote-card, .sponsor-item').addClass('fade-in');
+    // ===== RENDER SCHEDULE FROM DATA =====
+    if (typeof SCHEDULE_DATA !== 'undefined') {
+        const $timeline = $('#timeline');
+        $timeline.empty();
 
-    // Observe all fade-in elements
+        $.each(SCHEDULE_DATA, function (index, item) {
+            const card = `
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-time">${item.time}</div>
+                        <h3 class="timeline-title">
+                            <span class="emoji">${item.icon || ''}</span>
+                            ${item.title}
+                        </h3>
+                        <p class="timeline-desc">${item.description}</p>
+                        <span class="timeline-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            ${item.location}
+                        </span>
+                    </div>
+                </div>
+            `;
+            $timeline.append(card);
+        });
+
+        observeElements('.timeline-item.fade-in');
+    }
+
+    // ===== RENDER WORKSHOPS FROM DATA =====
+    if (typeof WORKSHOPS_DATA !== 'undefined') {
+        const $grid = $('#workshopsGrid');
+        $grid.empty();
+
+        $.each(WORKSHOPS_DATA, function (index, item) {
+            const card = `
+                <div class="workshop-card fade-in" data-color="${item.color}">
+                    <div class="workshop-icon">${item.icon || ''}</div>
+                    <h3 class="workshop-title">${item.title}</h3>
+                    <p class="workshop-desc">${item.description}</p>
+                    <div class="workshop-meta">
+                        <span>${item.time}</span>
+                        <span>${item.type}</span>
+                    </div>
+                </div>
+            `;
+            $grid.append(card);
+        });
+
+        observeElements('.workshop-card.fade-in');
+    }
+
+    // ===== RENDER FAQ FROM DATA =====
+    if (typeof FAQ_DATA !== 'undefined') {
+        const $faqList = $('#faqList');
+        $faqList.empty();
+
+        $.each(FAQ_DATA, function (index, item) {
+            const faqItem = `
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        <span>${item.question}</span>
+                        <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>${item.answer}</p>
+                    </div>
+                </div>
+            `;
+            $faqList.append(faqItem);
+        });
+
+        // Attach FAQ accordion behavior to dynamically created items
+        $(document).on('click', '.faq-question', function () {
+            const $item = $(this).parent('.faq-item');
+            const $answer = $item.find('.faq-answer');
+            const isActive = $item.hasClass('active');
+
+            // Close all
+            $('.faq-item').removeClass('active');
+            $('.faq-answer').css('max-height', '0');
+
+            // Open clicked if it wasn't active
+            if (!isActive) {
+                $item.addClass('active');
+                $answer.css('max-height', $answer[0].scrollHeight + 'px');
+            }
+        });
+
+        observeElements('.faq-item.fade-in');
+    }
+
+    // ===== RENDER SPONSORS FROM DATA =====
+    if (typeof SPONSORS_DATA !== 'undefined') {
+        const $sponsorsGrid = $('#sponsorsGrid');
+        $sponsorsGrid.empty();
+
+        $.each(SPONSORS_DATA, function (index, item) {
+            const sponsor = `
+                <div class="sponsor-item fade-in">
+                    <img src="${item.logo}" alt="${item.name}" loading="lazy">
+                </div>
+            `;
+            $sponsorsGrid.append(sponsor);
+        });
+
+        observeElements('.sponsor-item.fade-in');
+    }
+
+    // ===== INTERNSHIPS MODAL =====
+    const $modal = $('#internshipsModal');
+
+    $('#internshipsBtn').on('click', function (e) {
+        e.preventDefault();
+        $modal.addClass('active');
+        $('body').css('overflow', 'hidden');
+    });
+
+    function closeModal() {
+        $modal.removeClass('active');
+        $('body').css('overflow', '');
+    }
+
+    $('#modalClose').on('click', closeModal);
+
+    $modal.on('click', function (e) {
+        if ($(e.target).is('.modal-overlay')) {
+            closeModal();
+        }
+    });
+
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape' && $modal.hasClass('active')) {
+            closeModal();
+        }
+    });
+
+    // ===== INIT FADE-IN FOR STATIC ELEMENTS =====
+    $('.stat-card, .gallery-item, .keynote-card').addClass('fade-in');
     observeElements('.fade-in');
 
 });

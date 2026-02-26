@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Labs — RISE 2026 | IIIT-Bangalore</title>
+    <meta name="description"
+        content="Explore IIIT-Bangalore's cutting-edge research labs at RISE 2026. Discover innovations across AI, healthcare, accessibility, cybersecurity, and more.">
+    <link rel="icon" href="https://rise.iiitb.ac.in/wp-content/uploads/2022/07/cropped-iiitb_logo-32x32.png"
+        sizes="32x32">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="assets/RISE 2026 Text logo.png" alt="RISE 2026"></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#schedule">Schedule</a></li>
+                <li><a href="index.html#workshops">Workshops</a></li>
+                <li><a href="labs.html" class="active">Our Labs</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ===== PAGE WRAPPER ===== -->
+    <div class="page-wrapper">
+
+        <!-- ===== SUBPAGE HERO ===== -->
+        <section class="subpage-hero">
+            <div class="hero-content">
+                <h1 class="section-title">Our <span class="highlight">Research Labs</span></h1>
+                <p class="section-subtitle">Explore IIIT-Bangalore's centres of excellence driving innovation across
+                    multiple domains</p>
+            </div>
+        </section>
+
+        <!-- ===== LABS SECTION ===== -->
+        <section class="labs-section">
+            <div class="container">
+                <div class="labs-grid" id="labsGrid">
+                    <!-- Dynamically populated from data/labs.js -->
+                </div>
+            </div>
+        </section>
+
+    </div><!-- end page-wrapper -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">RISE 2026</h3>
+                    <p class="footer-tagline">Research, Innovation, Society & Entrepreneurship</p>
+                    <p class="footer-org">International Institute of Information Technology, Bangalore</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#schedule">Schedule</a>
+                    <a href="index.html#workshops">Workshops</a>
+                    <a href="labs.html">Our Labs</a>
+                    <a href="people.html">People</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>26/C, Electronics City</p>
+                    <p>Hosur Road, Bengaluru</p>
+                    <p>Karnataka 560100</p>
+                    <a href="https://www.iiitb.ac.in" target="_blank">www.iiitb.ac.in</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IIIT-Bangalore. All Rights Reserved. | RISE 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== DATA FILES ===== -->
+    <script src="data/labs.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Cursor glow
+            const $glow = $('#cursorGlow');
+            $(document).on('mousemove', function (e) {
+                $glow.css({ left: e.clientX + 'px', top: e.clientY + 'px' });
+                if (!$glow.hasClass('visible')) $glow.addClass('visible');
+            });
+            $(document).on('mouseleave', function () { $glow.removeClass('visible'); });
+
+            // Side menu toggle
+            $('#navToggle').on('click', function () {
+                $('#navLinks').toggleClass('open');
+                $('#navOverlay').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+            $('#navOverlay').on('click', function () {
+                $('#navLinks').removeClass('open');
+                $('#navOverlay').removeClass('active');
+                $('#navToggle').removeClass('active');
+            });
+            $('.nav-links a').on('click', function () {
+                $('#navLinks').removeClass('open');
+                $('#navOverlay').removeClass('active');
+                $('#navToggle').removeClass('active');
+            });
+
+            // Render labs from data
+            if (typeof LABS_DATA !== 'undefined') {
+                const $grid = $('#labsGrid');
+                $.each(LABS_DATA, function (index, lab) {
+                    const tags = lab.tags.map(t => `<span class="tag">${t}</span>`).join('');
+                    const card = `
+                        <div class="lab-card fade-in">
+                            <div class="lab-card-icon">${lab.icon}</div>
+                            <h3>${lab.name}</h3>
+                            <p>${lab.description}</p>
+                            <div class="lab-tags">${tags}</div>
+                            <a href="${lab.link}" target="_blank" class="lab-link">Visit Lab Page →</a>
+                        </div>
+                    `;
+                    $grid.append(card);
+                });
+            }
+
+            // Fade-in animations
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        $(entry.target).addClass('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            $('.fade-in').each(function () { observer.observe(this); });
+        });
+    </script>
+</body>
+
+</html>

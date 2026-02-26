@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People — RISE 2026 | IIIT-Bangalore</title>
+    <meta name="description"
+        content="Meet the people behind RISE 2026 at IIIT-Bangalore — faculty, researchers, organizing committee, and student volunteers.">
+    <link rel="icon" href="https://rise.iiitb.ac.in/wp-content/uploads/2022/07/cropped-iiitb_logo-32x32.png"
+        sizes="32x32">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="assets/RISE 2026 Text logo.png" alt="RISE 2026"></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#schedule">Schedule</a></li>
+                <li><a href="index.html#workshops">Workshops</a></li>
+                <li><a href="labs.html">Our Labs</a></li>
+                <li><a href="people.html" class="active">People</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ===== PAGE WRAPPER ===== -->
+    <div class="page-wrapper">
+
+        <!-- ===== SUBPAGE HERO ===== -->
+        <section class="subpage-hero">
+            <div class="hero-content">
+                <h1 class="section-title">The <span class="highlight">People</span></h1>
+                <p class="section-subtitle">Meet the faculty, researchers, and organizers behind RISE 2026</p>
+            </div>
+        </section>
+
+        <!-- ===== PEOPLE SECTION ===== -->
+        <section class="people-section">
+            <div class="container">
+                <h2 class="section-title" style="margin-bottom: 48px;">Organizing <span
+                        class="highlight">Committee</span></h2>
+                <div class="people-grid" id="peopleGrid">
+                    <!-- Dynamically populated from data/people.js -->
+                </div>
+            </div>
+        </section>
+
+    </div><!-- end page-wrapper -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">RISE 2026</h3>
+                    <p class="footer-tagline">Research, Innovation, Society & Entrepreneurship</p>
+                    <p class="footer-org">International Institute of Information Technology, Bangalore</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#schedule">Schedule</a>
+                    <a href="index.html#workshops">Workshops</a>
+                    <a href="labs.html">Our Labs</a>
+                    <a href="people.html">People</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>26/C, Electronics City</p>
+                    <p>Hosur Road, Bengaluru</p>
+                    <p>Karnataka 560100</p>
+                    <a href="https://www.iiitb.ac.in" target="_blank">www.iiitb.ac.in</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IIIT-Bangalore. All Rights Reserved. | RISE 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== DATA FILES ===== -->
+    <script src="data/people.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Cursor glow
+            const $glow = $('#cursorGlow');
+            $(document).on('mousemove', function (e) {
+                $glow.css({ left: e.clientX + 'px', top: e.clientY + 'px' });
+                if (!$glow.hasClass('visible')) $glow.addClass('visible');
+            });
+            $(document).on('mouseleave', function () { $glow.removeClass('visible'); });
+
+            // Side menu toggle
+            $('#navToggle').on('click', function () {
+                $('#navLinks').toggleClass('open');
+                $('#navOverlay').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+            $('#navOverlay').on('click', function () {
+                $('#navLinks').removeClass('open');
+                $('#navOverlay').removeClass('active');
+                $('#navToggle').removeClass('active');
+            });
+            $('.nav-links a').on('click', function () {
+                $('#navLinks').removeClass('open');
+                $('#navOverlay').removeClass('active');
+                $('#navToggle').removeClass('active');
+            });
+
+            // SVG icons for profile links
+            const LINK_ICONS = {
+                website: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+                email: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>',
+                linkedin: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>'
+            };
+
+            // Render people from data
+            if (typeof PEOPLE_DATA !== 'undefined') {
+                const $grid = $('#peopleGrid');
+                $.each(PEOPLE_DATA, function (index, person) {
+                    // Avatar: photo or initials
+                    let avatarContent;
+                    if (person.photo) {
+                        avatarContent = `<img src="${person.photo}" alt="${person.name}">`;
+                    } else {
+                        avatarContent = person.initials || '?';
+                    }
+
+                    // Social links
+                    let linksHTML = '';
+                    if (person.links) {
+                        for (const [type, url] of Object.entries(person.links)) {
+                            if (url && LINK_ICONS[type]) {
+                                const href = type === 'email' ? `mailto:${url}` : url;
+                                linksHTML += `<a href="${href}" title="${type}" target="_blank">${LINK_ICONS[type]}</a>`;
+                            }
+                        }
+                    }
+
+                    const card = `
+                        <div class="profile-card fade-in">
+                            <div class="profile-avatar">${avatarContent}</div>
+                            <h3 class="profile-name">${person.name}</h3>
+                            <p class="profile-role">${person.role}</p>
+                            <p class="profile-dept">${person.department}</p>
+                            ${linksHTML ? `<div class="profile-links">${linksHTML}</div>` : ''}
+                        </div>
+                    `;
+                    $grid.append(card);
+                });
+            }
+
+            // Fade-in animations
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        $(entry.target).addClass('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            $('.fade-in').each(function () { observer.observe(this); });
+        });
+    </script>
+</body>
+
+</html>

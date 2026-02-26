@@ -339,7 +339,8 @@ img {
     filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.4));
     transition: transform 0.3s ease, opacity 0.3s ease;
     -webkit-user-drag: none;
-    user-drag: none; /* Future-proofing */
+    user-drag: none;
+    /* Future-proofing */
 }
 
 .hero-logo.hero-logo-rise {
@@ -453,17 +454,15 @@ img {
     font-family: var(--font-primary);
     font-size: clamp(1.4rem, 3vw, 2rem);
     font-weight: 800;
-    background: linear-gradient(135deg, var(--blue-glow), var(--purple-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--white);
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.6), 0 0 40px rgba(96, 165, 250, 0.3);
     line-height: 1.2;
 }
 
 .countdown-label {
     display: block;
     font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-top: 4px;
@@ -1121,6 +1120,366 @@ img {
 }
 
 /* ========================================
+   INTERNSHIPS MODAL
+   ======================================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    padding: 24px;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-card {
+    position: relative;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 48px 40px;
+    max-width: 780px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+    transform: translateY(30px) scale(0.96);
+    transition: transform 0.35s ease;
+}
+
+.modal-overlay.active .modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--gray-300);
+    font-size: 1.6rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.modal-subtitle {
+    color: var(--gray-400);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.modal-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 24px 20px;
+    transition: all 0.3s ease;
+}
+
+.modal-item:hover {
+    border-color: rgba(96, 165, 250, 0.2);
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-3px);
+}
+
+.modal-item-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.modal-item h3 {
+    font-family: var(--font-primary);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.modal-item p {
+    color: var(--gray-400);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.modal-link {
+    display: inline-block;
+    color: var(--blue-glow);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.modal-link:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* ========================================
+   SUBPAGE HERO (Labs, People pages)
+   ======================================== */
+.subpage-hero {
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 64px;
+    position: relative;
+}
+
+.subpage-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(15, 23, 42, 0.6) 70%,
+            rgba(15, 23, 42, 0.92) 100%);
+    z-index: 0;
+}
+
+.subpage-hero .hero-content {
+    z-index: 1;
+    max-width: 700px;
+}
+
+.subpage-hero .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 12px;
+}
+
+.subpage-hero .section-subtitle {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   LAB CARDS (Our Labs page)
+   ======================================== */
+.labs-section {
+    padding: 80px 0;
+    background: rgba(15, 23, 42, 0.92);
+}
+
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.lab-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 36px 28px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.lab-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--purple));
+    border-radius: 20px 20px 0 0;
+}
+
+.lab-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(96, 165, 250, 0.2);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+}
+
+.lab-card-icon {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+}
+
+.lab-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.lab-card p {
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.lab-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.lab-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--blue-glow);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.lab-link:hover {
+    color: var(--white);
+    gap: 10px;
+}
+
+/* ========================================
+   PROFILE CARDS (People page)
+   ======================================== */
+.people-section {
+    padding: 80px 0;
+    background: rgba(15, 23, 42, 0.92);
+}
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+.profile-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(96, 165, 250, 0.2);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 3px solid rgba(96, 165, 250, 0.3);
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+    transition: border-color 0.3s ease;
+}
+
+.profile-card:hover .profile-avatar {
+    border-color: rgba(96, 165, 250, 0.6);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-family: var(--font-primary);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.profile-role {
+    color: var(--blue-light);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.profile-dept {
+    color: var(--gray-500);
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+}
+
+.profile-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.profile-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--gray-400);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.profile-links a:hover {
+    background: rgba(37, 99, 235, 0.2);
+    border-color: rgba(96, 165, 250, 0.3);
+    color: var(--white);
+}
+
+/* ========================================
    FOOTER
    ======================================== */
 .footer {
@@ -1324,6 +1683,26 @@ img {
     .sponsor-item img {
         height: 40px;
     }
+
+    /* Modal responsive */
+    .modal-card {
+        padding: 32px 24px;
+    }
+
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Labs responsive */
+    .labs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* People responsive */
+    .people-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1375,6 +1754,11 @@ img {
 
     .sponsor-item img {
         height: 32px;
+    }
+
+    /* People responsive - single column on very small screens */
+    .people-grid {
+        grid-template-columns: 1fr;
     }
 }
 

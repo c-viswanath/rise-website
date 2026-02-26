@@ -35,6 +35,8 @@
                 <!-- <li><a href="#keynote">Keynote</a></li> -->
                 <li><a href="#schedule">Schedule</a></li>
                 <li><a href="#workshops">Workshops</a></li>
+                <li><a href="labs.html">Our Labs</a></li>
+                <li><a href="people.html">People</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
@@ -97,9 +99,9 @@
                 </div>
 
                 <div class="hero-cta">
-                    <a href="https://forms.office.com/r/NYBp0vyTGw" class="btn-register" id="registerBtn">Register Now</a>
-                    <a href="https://www.iiitb.ac.in/courses/integrated-mtech-and-phd-program" target="_blank"
-                        class="banner-link">Internships & MS-PhD Admissions →</a>
+                    <a href="https://forms.office.com/r/NYBp0vyTGw" class="btn-register" id="registerBtn">Register
+                        Now</a>
+                    <button class="banner-link" id="internshipsBtn">Internships & MS-PhD Admissions →</button>
                 </div>
             </div>
         </section>
@@ -136,7 +138,7 @@
         </section>
 
         <!-- ===== KEYNOTE SECTION ===== -->
-<!-- 
+        <!-- 
         <section class="keynote" id="keynote">
             <div class="container">
                 <h2 class="section-title">Keynote <span class="highlight">Speaker</span></h2>
@@ -176,11 +178,7 @@
                 <h2 class="section-title">Event <span class="highlight">Timeline</span></h2>
                 <p class="section-subtitle">March 14, 2026 — A day of discovery and innovation</p>
                 <div class="timeline" id="timeline">
-                    <!-- Dynamically populated from schedule.json -->
-                    <div class="timeline-loading">
-                        <div class="spinner"></div>
-                        <p>Loading schedule...</p>
-                    </div>
+                    <!-- Dynamically populated from data/schedule.js -->
                 </div>
             </div>
         </section>
@@ -190,60 +188,8 @@
             <div class="container">
                 <h2 class="section-title">Workshops & <span class="highlight">Sessions</span></h2>
                 <p class="section-subtitle">Explore diverse research tracks and interactive sessions</p>
-                <div class="workshops-grid">
-                    <div class="workshop-card" data-color="blue">
-                        <div class="workshop-icon">🧬</div>
-                        <h3 class="workshop-title">CAGS</h3>
-                        <p class="workshop-desc">Centre for Accessibility in the Global South — Research on accessible
-                            and
-                            inclusive technology solutions</p>
-                        <div class="workshop-meta">
-                            <span>02:30 PM onwards</span>
-                            <span>Lab Sessions</span>
-                        </div>
-                    </div>
-                    <div class="workshop-card" data-color="purple">
-                        <div class="workshop-icon">⚛️</div>
-                        <h3 class="workshop-title">Physics & Mathematics</h3>
-                        <p class="workshop-desc">Cutting-edge research in theoretical and applied physics, mathematical
-                            modeling and computational sciences</p>
-                        <div class="workshop-meta">
-                            <span>02:30 PM onwards</span>
-                            <span>Lab Sessions</span>
-                        </div>
-                    </div>
-                    <div class="workshop-card" data-color="cyan">
-                        <div class="workshop-icon">🏥</div>
-                        <h3 class="workshop-title">EHRC</h3>
-                        <p class="workshop-desc">Electronics Health Research Centre — Innovations in healthcare
-                            technology
-                            and biomedical engineering</p>
-                        <div class="workshop-meta">
-                            <span>02:30 PM onwards</span>
-                            <span>Lab Sessions</span>
-                        </div>
-                    </div>
-                    <div class="workshop-card" data-color="emerald">
-                        <div class="workshop-icon">💻</div>
-                        <h3 class="workshop-title">CSE Showcase</h3>
-                        <p class="workshop-desc">Computer Science & Engineering department showcasing AI, ML, Systems,
-                            and
-                            Software Engineering research</p>
-                        <div class="workshop-meta">
-                            <span>02:30 PM onwards</span>
-                            <span>Presentations</span>
-                        </div>
-                    </div>
-                    <div class="workshop-card" data-color="amber">
-                        <div class="workshop-icon">🔐</div>
-                        <h3 class="workshop-title">Cybersecurity</h3>
-                        <p class="workshop-desc">Research in network security, cryptography, and privacy-preserving
-                            technologies</p>
-                        <div class="workshop-meta">
-                            <span>02:30 PM onwards</span>
-                            <span>Workshop</span>
-                        </div>
-                    </div>
+                <div class="workshops-grid" id="workshopsGrid">
+                    <!-- Dynamically populated from data/workshops.js -->
                 </div>
             </div>
         </section>
@@ -274,78 +220,8 @@
         <section class="faq" id="faq">
             <div class="container">
                 <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>What is RISE 2026?</span>
-                            <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <p>RISE (Research, Innovation, Society & Entrepreneurship) is IIIT-Bangalore's annual open
-                                house
-                                event showcasing the institute's research activities, innovations, and collaborations
-                                across
-                                multiple domains.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Who can attend?</span>
-                            <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <p>RISE 2026 is open to everyone — students, researchers, industry professionals, and anyone
-                                interested in technology and innovation. Registration is required for entry.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Where is the event held?</span>
-                            <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <p>RISE 2026 is held at the IIIT-Bangalore campus, located at 26/C, Electronics City, Hosur
-                                Road, Bengaluru, Karnataka 560100.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Is there a registration fee?</span>
-                            <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <p>No, RISE 2026 is a free event. However, prior registration is mandatory for entry. Please
-                                register using the "Register Now" button on this page.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>How can I participate as a poster presenter?</span>
-                            <svg class="faq-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Poster presentations are currently open for IIIT-B research scholars and students. If
-                                you're
-                                interested in presenting your research, please contact the organizing committee through
-                                the
-                                official channels.</p>
-                        </div>
-                    </div>
+                <div class="faq-list" id="faqList">
+                    <!-- Dynamically populated from data/faq.js -->
                 </div>
             </div>
         </section>
@@ -355,16 +231,8 @@
             <div class="container">
                 <h2 class="section-title">Our <span class="highlight">Partners</span></h2>
                 <p class="section-subtitle">Proudly supported by</p>
-                <div class="sponsors-grid">
-                    <div class="sponsor-item">
-                        <img src="assets/sponsors/CAGS.png" alt="CAGS" loading="lazy">
-                    </div>
-                    <div class="sponsor-item">
-                        <img src="assets/sponsors/COMET.png" alt="COMET" loading="lazy">
-                    </div>
-                    <div class="sponsor-item">
-                        <img src="assets/sponsors/EHRC.png" alt="EHRC" loading="lazy">
-                    </div>
+                <div class="sponsors-grid" id="sponsorsGrid">
+                    <!-- Dynamically populated from data/sponsors.js -->
                 </div>
             </div>
         </section>
@@ -386,6 +254,8 @@
                     <a href="#about">About</a>
                     <a href="#schedule">Schedule</a>
                     <a href="#workshops">Workshops</a>
+                    <a href="labs.html">Our Labs</a>
+                    <a href="people.html">People</a>
                 </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
@@ -400,6 +270,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- ===== INTERNSHIPS MODAL ===== -->
+    <div class="modal-overlay" id="internshipsModal">
+        <div class="modal-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2 class="modal-title">Internships & <span class="highlight">MS-PhD Admissions</span></h2>
+            <p class="modal-subtitle">Explore academic and research opportunities at IIIT-Bangalore</p>
+            <div class="modal-grid">
+                <div class="modal-item">
+                    <div class="modal-item-icon">🎓</div>
+                    <h3>Integrated M.Tech (iM.Tech)</h3>
+                    <p>5-year integrated programme combining undergraduate and postgraduate studies in Information
+                        Technology.</p>
+                    <a href="https://www.iiitb.ac.in/courses/integrated-mtech" target="_blank" class="modal-link">Learn
+                        More →</a>
+                </div>
+                <div class="modal-item">
+                    <div class="modal-item-icon">🔬</div>
+                    <h3>MS by Research</h3>
+                    <p>Research-focused master's programme for those who wish to pursue advanced research in Computer
+                        Science and allied areas.</p>
+                    <a href="https://www.iiitb.ac.in/courses/ms-by-research" target="_blank" class="modal-link">Learn
+                        More →</a>
+                </div>
+                <div class="modal-item">
+                    <div class="modal-item-icon">📚</div>
+                    <h3>PhD Programme</h3>
+                    <p>Doctoral programme with opportunities to work on cutting-edge research problems under expert
+                        faculty guidance.</p>
+                    <a href="https://www.iiitb.ac.in/courses/phd" target="_blank" class="modal-link">Learn More →</a>
+                </div>
+                <div class="modal-item">
+                    <div class="modal-item-icon">💼</div>
+                    <h3>Research Internships</h3>
+                    <p>Summer and semester-long internship opportunities to work with IIIT-B's research groups and labs.
+                    </p>
+                    <a href="https://www.iiitb.ac.in" target="_blank" class="modal-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== DATA FILES ===== -->
+    <script src="data/schedule.js"></script>
+    <script src="data/workshops.js"></script>
+    <script src="data/sponsors.js"></script>
+    <script src="data/faq.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
