@@ -134,15 +134,37 @@
                 const $grid = $('#labsGrid');
                 $.each(LABS_DATA, function (index, lab) {
                     const tags = lab.tags.map(t => `<span class="tag">${t}</span>`).join('');
-                    const card = `
-                        <div class="lab-card fade-in">
-                            <div class="lab-card-icon">${lab.icon}</div>
-                            <h3>${lab.name}</h3>
-                            <p>${lab.description}</p>
-                            <div class="lab-tags">${tags}</div>
-                            <a href="${lab.link}" target="_blank" class="lab-link">Visit Lab Page →</a>
-                        </div>
-                    `;
+            const facultyHTML = lab.faculty
+                .map(f => `
+                    <div class="lab-faculty-item">
+                        <span class="lab-faculty-name">${f.name}</span>
+                        <a href="mailto:${f.email}" class="lab-faculty-email">
+                            ${f.email}
+                        </a>
+                    </div>
+                `)
+                .join("");
+
+            const card = `
+                <div class="lab-card fade-in">
+                    <div class="center lab-card-icon">${lab.icon}</div>
+
+                    <h3 class="lab-title">${lab.name}</h3>
+                    <p class="lab-description">${lab.description}</p>
+
+                    <hr>
+                    <h4 class="center">Faculty</h4>
+                    <hr>
+                    ${facultyHTML}
+                    <br>
+
+                    <hr>
+                    <h4 class="center">Research Areas</h4>
+                    <hr>
+
+                    <div class="lab-tags">${tags}</div>
+                </div>
+            `;
                     $grid.append(card);
                 });
             }

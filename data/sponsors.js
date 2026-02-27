@@ -9,15 +9,7 @@
 
 const SPONSORS_DATA = [
     {
-        name: "CAGS",
-        logo: "assets/sponsors/CAGS.png"
+        name: "MOSIP",
+        logo: "assets/sponsors/MOSIP-White.png"
     },
-    {
-        name: "COMET",
-        logo: "assets/sponsors/COMET.png"
-    },
-    {
-        name: "EHRC",
-        logo: "assets/sponsors/EHRC.png"
-    }
 ];

@@ -23,6 +23,23 @@
     --cyan: #06b6d4;
     --emerald: #10b981;
     --amber: #f59e0b;
+    --blue: #2563eb;
+    --blue-light: #60a5fa;
+    --purple: #7c3aed;
+    --purple-light: #a78bfa;
+    --cyan: #06b6d4;
+    --emerald: #10b981;
+    --amber: #f59e0b;
+    --indigo: #4f46e5;
+    --teal: #14b8a6;
+    --rose: #e11d48;
+    --gray: #6b7280;
+    --lime: #65a30d;
+    --orange: #ea580c;
+    --sky: #0284c7;
+    --violet: #8b5cf6;
+    --pink: #db2777;
+    --red: #dc2626;
     --white: #ffffff;
     --gray-50: #f8fafc;
     --gray-100: #f1f5f9;
@@ -54,6 +71,12 @@ body {
     color: var(--gray-200);
     overflow-x: hidden;
     line-height: 1.6;
+}
+
+/* Utilities */
+.center {
+    display: flex;
+    justify-content: center;
 }
 
 /* ---------- Cursor Glow ---------- */
@@ -690,8 +713,9 @@ img {
     padding: 6px 14px;
     background: rgba(37, 99, 235, 0.1);
     border: 1px solid rgba(37, 99, 235, 0.2);
-    border-radius: 20px;
-    font-size: 0.8rem;
+    border-radius: 8px;
+    /*font-size: 0.8rem;*/
+    font-size: small;
     color: var(--blue-glow);
     font-weight: 500;
 }
@@ -924,6 +948,46 @@ img {
 
 .workshop-card[data-color="amber"]::before {
     background: linear-gradient(90deg, var(--amber), #fbbf24);
+}
+
+.workshop-card[data-color="indigo"]::before {
+    background: linear-gradient(90deg, var(--indigo), #818cf8);
+}
+
+.workshop-card[data-color="teal"]::before {
+    background: linear-gradient(90deg, var(--teal), #2dd4bf);
+}
+
+.workshop-card[data-color="rose"]::before {
+    background: linear-gradient(90deg, var(--rose), #fb7185);
+}
+
+.workshop-card[data-color="gray"]::before {
+    background: linear-gradient(90deg, var(--gray), #9ca3af);
+}
+
+.workshop-card[data-color="lime"]::before {
+    background: linear-gradient(90deg, var(--lime), #84cc16);
+}
+
+.workshop-card[data-color="orange"]::before {
+    background: linear-gradient(90deg, var(--orange), #fb923c);
+}
+
+.workshop-card[data-color="sky"]::before {
+    background: linear-gradient(90deg, var(--sky), #38bdf8);
+}
+
+.workshop-card[data-color="violet"]::before {
+    background: linear-gradient(90deg, var(--violet), #a78bfa);
+}
+
+.workshop-card[data-color="pink"]::before {
+    background: linear-gradient(90deg, var(--pink), #f472b6);
+}
+
+.workshop-card[data-color="red"]::before {
+    background: linear-gradient(90deg, var(--red), #f87171);
 }
 
 .workshop-card:hover {
@@ -1309,7 +1373,7 @@ img {
 .lab-card {
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 36px 28px;
     transition: all 0.4s ease;
     position: relative;
@@ -1357,8 +1421,10 @@ img {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    margin-block: 8px;
+/*    margin-top: 4px;
     margin-bottom: 16px;
-}
+*/}
 
 .lab-link {
     display: inline-flex;
@@ -1373,6 +1439,34 @@ img {
 .lab-link:hover {
     color: var(--white);
     gap: 10px;
+}
+
+.lab-faculty {
+    /*margin-top: 0.75rem;*/
+    /*text-align: center;*/
+}
+
+.lab-faculty-item {
+    display: flex;
+    gap: 8px;
+    margin-top: 0.4rem;
+}
+
+.lab-faculty-name {
+    font-size: small;
+    /*display: block;*/
+    /*font-weight: 600;*/
+    /*color: #111;*/
+}
+
+.lab-faculty-email {
+    font-size: 0.85rem;
+    color: var(--blue-glow);
+    /*text-decoration: none;*/
+}
+
+.lab-faculty-email:hover {
+    text-decoration: underline;
 }
 
 /* ========================================
@@ -1775,3 +1869,4 @@ img {
     opacity: 1;
     transform: translateY(0);
 }
+
