@@ -26,19 +26,21 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo"><img src="assets/RISE 2026 Text logo.png" alt="RISE 2026"></a>
+            <div class="nav-visible-links">
+                <a href="index.html#home" class="active">Home</a>
+                <a href="people.html">People</a>
+                <a href="labs.html">Our Labs</a>
+            </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="index.html#about">About</a></li>
                 <!-- <li><a href="#keynote">Keynote</a></li> -->
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#workshops">Workshops</a></li>
-                <li><a href="labs.html">Our Labs</a></li>
-                <li><a href="people.html">People</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="index.html#schedule">Schedule</a></li>
+                <li><a href="index.html#workshops">Workshops</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
             </ul>
         </div>
     </nav>
@@ -58,7 +60,8 @@
                         class="hero-logo hero-logo-rise">
                 </div>
                 <div class="hero-info">
-                    <span class="hero-info-item">
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=RISE+2026+Open+House&dates=20260314T033000Z/20260314T123000Z&details=Research,+Innovation,+Society+%26+Entrepreneurship+open+house+event.&location=IIIT-Bangalore"
+                        target="_blank" class="hero-info-item hero-link">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -67,15 +70,16 @@
                             <line x1="3" y1="10" x2="21" y2="10" />
                         </svg>
                         March 14, 2026
-                    </span>
-                    <span class="hero-info-item">
+                    </a>
+                    <a href="https://maps.app.goo.gl/cZK3pU5v3Tz4WcGn8" target="_blank"
+                        class="hero-info-item hero-link">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
                         </svg>
                         IIIT-Bangalore Campus
-                    </span>
+                    </a>
                 </div>
 
                 <!-- Countdown Timer -->
@@ -283,6 +287,7 @@
                     <p>26/C, Electronics City</p>
                     <p>Hosur Road, Bengaluru</p>
                     <p>Karnataka 560100</p>
+                    <a href="mailto:rise@iiitb.ac.in">rise@iiitb.ac.in</a><br>
                     <a href="https://www.iiitb.ac.in" target="_blank">www.iiitb.ac.in</a>
                 </div>
             </div>
@@ -300,34 +305,17 @@
             <p class="modal-subtitle">Explore academic and research opportunities at IIIT-Bangalore</p>
             <div class="modal-grid">
                 <div class="modal-item">
-                    <div class="modal-item-icon">🎓</div>
-                    <h3>Integrated M.Tech (iM.Tech)</h3>
-                    <p>5-year integrated programme combining undergraduate and postgraduate studies in Information
-                        Technology.</p>
-                    <a href="https://www.iiitb.ac.in/courses/integrated-mtech" target="_blank" class="modal-link">Learn
-                        More →</a>
+                    <div class="modal-item-icon">💼</div>
+                    <h3>Summer Internship</h3>
+                    <p>Summer internship opportunities to work with IIIT-B's research groups and labs.</p>
+                    <a href="https://iiitb.ac.in/summer-internship" target="_blank" class="modal-link">Learn More →</a>
                 </div>
                 <div class="modal-item">
                     <div class="modal-item-icon">🔬</div>
-                    <h3>MS by Research</h3>
-                    <p>Research-focused master's programme for those who wish to pursue advanced research in Computer
-                        Science and allied areas.</p>
-                    <a href="https://www.iiitb.ac.in/courses/ms-by-research" target="_blank" class="modal-link">Learn
-                        More →</a>
-                </div>
-                <div class="modal-item">
-                    <div class="modal-item-icon">📚</div>
-                    <h3>PhD Programme</h3>
-                    <p>Doctoral programme with opportunities to work on cutting-edge research problems under expert
-                        faculty guidance.</p>
-                    <a href="https://www.iiitb.ac.in/courses/phd" target="_blank" class="modal-link">Learn More →</a>
-                </div>
-                <div class="modal-item">
-                    <div class="modal-item-icon">💼</div>
-                    <h3>Research Internships</h3>
-                    <p>Summer and semester-long internship opportunities to work with IIIT-B's research groups and labs.
-                    </p>
-                    <a href="https://www.iiitb.ac.in" target="_blank" class="modal-link">Learn More →</a>
+                    <h3>MS & PhD Admissions</h3>
+                    <p>Research-focused programmes for those who wish to pursue advanced research.</p>
+                    <a href="https://iiitb.ac.in/courses/master-of-science-by-researchdoctor-of-philosophy"
+                        target="_blank" class="modal-link">Learn More →</a>
                 </div>
             </div>
         </div>

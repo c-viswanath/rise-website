@@ -97,16 +97,26 @@ $(document).ready(function () {
             const id = $(this).attr('id');
 
             if (scrollPos >= top && scrollPos < bottom) {
-                $('.nav-links a').removeClass('active');
-                $('.nav-links a[href="#' + id + '"]').addClass('active');
+                $('.nav-links a, .nav-visible-links a').removeClass('active');
+                $('.nav-links a[href="#' + id + '"], .nav-visible-links a[href="index.html#' + id + '"]').addClass('active');
             }
         });
     });
 
     // ===== SMOOTH SCROLL =====
-    $('a[href^="#"]').on('click', function (e) {
+    $('a[href^="#"], a[href^="index.html#"]').on('click', function (e) {
+        const href = this.getAttribute('href');
+
+        // If it's a link to index.html#something from another page, let default behavior happen
+        if (href.startsWith('index.html#') && window.location.pathname.indexOf('index.html') === -1 && window.location.pathname !== '/') {
+            return;
+        }
+
+        // Otherwise smooth scroll if target exists on current page
         e.preventDefault();
-        const target = $(this.getAttribute('href'));
+        const targetId = href.replace('index.html', '');
+        const target = $(targetId);
+
         if (target.length) {
             $('html, body').animate({
                 scrollTop: target.offset().top - 64

@@ -181,15 +181,17 @@ img {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: transparent;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
 }
 
 .navbar.scrolled {
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(15, 23, 42, 0.85);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container {
@@ -216,6 +218,32 @@ img {
 
 .nav-logo img:hover {
     opacity: 0.85;
+}
+
+/* Visible links */
+.nav-visible-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-visible-links a {
+    display: block;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--gray-300);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.nav-visible-links a:hover,
+.nav-visible-links a.active {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Side panel menu */
@@ -445,6 +473,18 @@ img {
 
 .hero-info-item svg {
     opacity: 0.8;
+}
+
+.hero-link {
+    transition: all 0.25s ease;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.hero-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    transform: translateY(-2px);
 }
 
 /* ---------- Countdown ---------- */
@@ -1024,6 +1064,17 @@ img {
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-size: 0.8rem;
     color: var(--gray-500);
+}
+
+.workshop-meta span:first-child {
+    background: rgba(37, 99, 235, 0.15);
+    color: var(--blue-glow);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(37, 99, 235, 0.3);
 }
 
 /* ========================================
@@ -1654,6 +1705,39 @@ img {
    RESPONSIVE
    ======================================== */
 @media (max-width: 768px) {
+    .nav-container {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 12px 24px;
+        gap: 12px;
+    }
+
+    .nav-logo {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 4px;
+    }
+
+    .nav-visible-links {
+        position: static;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+        order: 3;
+        margin-top: 8px;
+    }
+
+    .nav-toggle {
+        position: absolute;
+        top: 16px;
+        right: 24px;
+    }
+
+    .hero {
+        padding-top: 120px;
+        /* Account for taller navbar */
+    }
+
     .hero-content {
         padding: 24px 16px;
     }
