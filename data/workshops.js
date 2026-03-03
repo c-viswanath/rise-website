@@ -22,8 +22,8 @@ const WORKSHOPS_DATA = [
     //     // color: "cyan"
     // },
     {
-        "title": "AI-DS Dept – Overview of AIDS & AI/ML Research @ IIITB",
-        "description": "Overview of AIDS by Prof. J. Dinesh Babu, followed by the current state of AI & ML research @ IIITB and its relevance by AIDS faculty.",
+        "title": "AI-DS Dept – Overview of AI-DS & AI/ML Research @ IIITB",
+        "description": "Overview of AI-DS by Prof. J. Dinesh Babu, followed by the current state of AI & ML research @ IIITB and its relevance by AIDS faculty.",
         "time": "11:45 AM – 1:15 PM",
         "type": "Talk",
         "icon": "🧠🤖",
@@ -38,7 +38,7 @@ const WORKSHOPS_DATA = [
         color: "emerald"
     },
     {
-        "title": "ECE Dept – Overview of ECE & Intelligent Reflecting Surfaces",
+        "title": "ECE Dept – Intelligent Reflecting Surfaces",
         "description": "Overview of ECE by Prof. Madhav Rao, followed by a workshop and demonstration on Intelligent Reflecting Surfaces by Prof. Prem Singh.",
         "time": "11:45 AM – 1:15 PM",
         "type": "Talk & Workshop",
