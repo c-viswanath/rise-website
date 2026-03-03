@@ -16,4 +16,8 @@ const SPONSORS_DATA = [
         name: "Mantiswave Networks",
         logo: "assets/sponsors/mantiswave.jpeg"
     },
+    {
+        name: "IIIT-Bangalore",
+        logo: "assets/sponsors/iiitb-trademark-logo-full-white.png"
+    },
 ];
