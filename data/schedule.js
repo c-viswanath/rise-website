@@ -28,7 +28,7 @@ const SCHEDULE_DATA = [
     {
         time: "10:30 AM - 11:30 AM",
         title: "Keynote Address",
-        description: "Keynote Address by Amand Rangarajan (VP, Google DeepMind)",
+        description: "Keynote Address by Anand Rangarajan (VP, Google DeepMind)",
         location: "Main Auditorium",
         icon: ""
     },

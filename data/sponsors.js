@@ -12,4 +12,8 @@ const SPONSORS_DATA = [
         name: "MOSIP",
         logo: "assets/sponsors/MOSIP-White.png"
     },
+    {
+        name: "Mantiswave Networks",
+        logo: "assets/sponsors/mantiswave.jpeg"
+    },
 ];

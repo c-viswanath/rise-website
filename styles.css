@@ -40,6 +40,8 @@
     --violet: #8b5cf6;
     --pink: #db2777;
     --red: #dc2626;
+    --gold-light: #f6d365;   /* soft gold */
+    --amber-light: #fda085;  /* warm amber */
     --white: #ffffff;
     --gray-50: #f8fafc;
     --gray-100: #f1f5f9;
@@ -158,8 +160,15 @@ img {
     letter-spacing: -0.02em;
 }
 
-.section-title .highlight {
+.highlight {
     background: linear-gradient(135deg, var(--blue-light), var(--purple-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.highlight--gold {
+    background: linear-gradient(135deg, var(--gold-light), var(--amber-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
