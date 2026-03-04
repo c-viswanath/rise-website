@@ -13,8 +13,12 @@ const SPONSORS_DATA = [
         logo: "assets/sponsors/MOSIP-White.png"
     },
     {
+        name: "UpGrad",
+        logo: "assets/sponsors/UpGrad-Red.png"
+    },
+    {
         name: "Mantiswave Networks",
-        logo: "assets/sponsors/mantiswave.jpeg"
+        logo: "assets/sponsors/mantiswave-networks-logo.png"
     },
     {
         name: "IIIT-Bangalore",
