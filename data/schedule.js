@@ -5,7 +5,7 @@
 
 const SCHEDULE_DATA = [
     {
-        time: "09:30 AM onwards",
+        time: "08:30 AM onwards",
         title: "Registrations",
         description: "Participant check-in and registration at the venue",
         location: "Main Entrance",
