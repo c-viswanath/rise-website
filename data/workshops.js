@@ -99,7 +99,7 @@ const WORKSHOPS_DATA = [
     },
     {
         title: "CPE – Professional Skills",
-        description: "Opportunities to improve or update professional skills by Prof. V. Sridhar",
+        description: "Explore IIIT-B Online Certificate Programmes by Prof. V Sridhar. Gain a comprehensive overview of the online programmes offered by IIIT-B, specifically designed to empower learners with industry-relevant knowledge and practical expertise. Discover how these programmes can help you stay competitive, future-ready, and aligned with evolving market demands.",
         time: "11:45 AM – 1:15 PM",
         type: "Talk",
         icon: "🛠️",
