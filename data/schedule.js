@@ -14,7 +14,7 @@ const SCHEDULE_DATA = [
     {
         time: "09:45 AM",
         title: "Inauguration",
-        description: "Welcome address and formal inauguration of RISE 2025",
+        description: "Welcome address and formal inauguration of RISE 2026",
         location: "Main Auditorium",
         icon: ""
     },
