@@ -89,6 +89,26 @@ const LABS_DATA = [
     "description": "The Web Science Lab studies how the Internet, the Web, and AI affect different facets of human life, including business, administration, social well-being, education, and personal relationships. It is part of the global Web Science Trust Network and engages in digital empowerment initiatives."
   },
   {
+    "name": "Graphics-Visualization-Computing Lab (GVCL)",
+    "icon": "🖼️",
+    "tags": [
+      "Spatial analytics",
+      "3D reconstruction," 
+      "Natural hazards",
+      "Climate change",
+      "Population surveys," 
+      "Eye tracking",
+      "Reverse engineering visualizations",
+    ],
+    "faculty": [
+      {
+        "name": "Jaya Sreevalsan Nair",
+        "email": "jaya@iiitb.ac.in"
+      },
+    ],
+    "description": "GVCL, founded by Prof. Jaya Sreevalsan-Nair in 2011, is an interdisciplinary lab focused on visual analytics and spatial computing. We develop data models and visualization techniques for spatio-temporal and multivariate data, leveraging tensors, matrices, and complex networks. Collaborating with domain experts, we create innovative solutions for GIS, biology, medicine, and survey analytics."
+  }
+  {
     "name": "Networking and Communication Research Lab (NCRL)",
     "icon": "📶",
     "tags": [
