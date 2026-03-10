@@ -93,7 +93,7 @@ const LABS_DATA = [
     "icon": "🖼️",
     "tags": [
       "Spatial analytics",
-      "3D reconstruction," 
+      "3D reconstruction", 
       "Natural hazards",
       "Climate change",
       "Population surveys," 
