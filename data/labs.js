@@ -96,7 +96,7 @@ const LABS_DATA = [
       "3D reconstruction", 
       "Natural hazards",
       "Climate change",
-      "Population surveys," 
+      "Population surveys",
       "Eye tracking",
       "Reverse engineering visualizations",
     ],
