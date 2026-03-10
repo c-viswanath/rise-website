@@ -107,7 +107,7 @@ const LABS_DATA = [
       },
     ],
     "description": "GVCL, founded by Prof. Jaya Sreevalsan-Nair in 2011, is an interdisciplinary lab focused on visual analytics and spatial computing. We develop data models and visualization techniques for spatio-temporal and multivariate data, leveraging tensors, matrices, and complex networks. Collaborating with domain experts, we create innovative solutions for GIS, biology, medicine, and survey analytics."
-  }
+  },
   {
     "name": "Networking and Communication Research Lab (NCRL)",
     "icon": "📶",
