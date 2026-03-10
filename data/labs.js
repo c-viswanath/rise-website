@@ -54,9 +54,11 @@ const LABS_DATA = [
     "icon": "🧊",
     "tags": [
       "Few-shot object segmentation",
-      "CAD-based object part segmentation",
       "Generative AI for 3D vision",
-      "Language-guided 3D exploration"
+      "Language-guided 3D exploration",
+      "Spatially-grounded image-to-image diffusion",
+      "Representation Learning",
+      "Vision-Language-Action models"
     ],
     "faculty": [
       {
@@ -283,5 +285,70 @@ const LABS_DATA = [
       }
     ],
     "description": "The COMET Lab focuses on embedded system design for 5G and beyond wireless communication systems."
+  },
+  {
+    "name": "Software Engineering Lab",
+    "icon": "🧩",
+    "tags": [
+      "Software testing",
+      "Model driven engineering",
+      "Formal verification",
+      "Requirement engineering",
+      "Software sustainability",
+      "Reverse engineering",
+      "Software architecture",
+      "Formal specification",
+      "Runtime verification",
+      "Model checking"
+    ],
+    "faculty": [
+      {
+        "name": "Meenakshi D'Souza",
+        "email": "meenakshi@iiitb.ac.in"
+      },
+      {
+        "name": "Sujit Kumar Chakrabarti",
+        "email": "sujitkc@iiitb.ac.in"
+      }
+    ],
+    "description": "Our current research covers a wide variety of areas ranging from empirical to formal aspects of software engineering. It spans both upstream activities such as requirements and design, and downstream activities such as testing and maintenance across enterprise and embedded domains, including pattern-oriented software engineering, distributed software engineering, model-driven software engineering, and verification of web services and embedded software."
+  },
+  {
+    "name": "Connected Devices and Wearables Lab",
+    "icon": "⌚",
+    "tags": [
+      "Internet of Things",
+      "Embedded systems",
+      "PUF-based hardware security",
+      "Wearables",
+      "Human body communication",
+      "Tiny ML"
+    ],
+    "faculty": [
+      {
+        "name": "Kurian Polachan",
+        "email": "kurian.polachan@iiitb.ac.in"
+      }
+    ],
+    "description": "The group focuses on researching and prototyping hardware and systems for connected devices and wearables, with applications in healthcare, consumer electronics, and industrial IoT, including hardware security and TinyML."
+  },
+  {
+    "name": "Intelligent Hardware Systems Lab",
+    "icon": "📟",
+    "tags": [
+      "Custom ML/LLM hardware accelerators",
+      "Approximate computing",
+      "Hardware security",
+      "Genomics",
+      "Image processing",
+      "Neuromorphic computing"
+    ],
+    "faculty": [
+      {
+        "name": "Madhav Rao",
+        "email": "mr@iiitb.ac.in"
+      }
+    ],
+    "description": "The IHS Lab Group focuses on the design and development of intelligent, innovative hardware solutions aimed at addressing key challenges aligned with emerging industry trends."
   }
 ]
