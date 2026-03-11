@@ -40,8 +40,10 @@
     --violet: #8b5cf6;
     --pink: #db2777;
     --red: #dc2626;
-    --gold-light: #f6d365;   /* soft gold */
-    --amber-light: #fda085;  /* warm amber */
+    --gold-light: #f6d365;
+    /* soft gold */
+    --amber-light: #fda085;
+    /* warm amber */
     --white: #ffffff;
     --gray-50: #f8fafc;
     --gray-100: #f1f5f9;
@@ -382,6 +384,25 @@ img {
     padding: 40px 20px;
     width: 100%;
     max-width: 900px;
+}
+
+.hero-top-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 24px;
+    user-select: none;
+}
+
+.hero-top-logo {
+    height: 48px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.hero-top-logo.iic-logo {
+    filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
 }
 
 .hero-logos {
@@ -1482,9 +1503,10 @@ img {
     gap: 8px;
     flex-wrap: wrap;
     margin-block: 8px;
-/*    margin-top: 4px;
+    /*    margin-top: 4px;
     margin-bottom: 16px;
-*/}
+*/
+}
 
 .lab-link {
     display: inline-flex;
@@ -1751,6 +1773,15 @@ img {
         padding: 24px 16px;
     }
 
+    .hero-top-logos {
+        gap: 20px;
+        margin-bottom: 16px;
+    }
+
+    .hero-top-logo {
+        height: 36px;
+    }
+
     .hero-logos {
         gap: 16px;
         margin-bottom: 16px;
@@ -1897,6 +1928,15 @@ img {
         padding: 20px 12px;
     }
 
+    .hero-top-logos {
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .hero-top-logo {
+        height: 28px;
+    }
+
     .hero-logos {
         gap: 12px;
     }
@@ -1962,4 +2002,3 @@ img {
     opacity: 1;
     transform: translateY(0);
 }
-
