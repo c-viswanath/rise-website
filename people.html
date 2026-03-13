@@ -51,8 +51,11 @@
         <!-- ===== SUBPAGE HERO ===== -->
         <section class="subpage-hero">
             <div class="hero-content">
-                <h1 class="section-title">The <span class="highlight">People</span></h1>
-                <p class="section-subtitle">A repository of profiles of our MS & PhD scholars</p>
+                <h1 class="section-title">Our <span class="highlight">Research Scholars</span></h1>
+                <p class="section-subtitle">A repository of our MS & PhD scholars</p>
+                <p class="section-subsubtitle">You can find the comprehensive list at 
+                    <a class="underlined" href="https://www.iiitb.ac.in/ms-by-research-scholars">IIIT-B MSR</a> 
+                    and <a class="underlined" href="https://www.iiitb.ac.in/research-scholars">IIIT-B PhD</a> page</p>
             </div>
         </section>
 
@@ -172,7 +175,10 @@
             // Render people from data
             if (typeof PEOPLE_DATA !== 'undefined') {
                 const $grid = $('#peopleGrid');
-                $.each(PEOPLE_DATA, function (index, person) {
+                const sortedPeople = [...PEOPLE_DATA].sort((a, b) =>
+                    a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
+                );
+                $.each(sortedPeople, function (index, person) {
                     // Avatar: photo or initials
                     let avatarContent;
                     if (person.photo) {
@@ -195,7 +201,7 @@
                     // About section: truncated with CSS, "more" opens modal
                     let aboutHTML = '';
                     if (person.about) {
-                        const needsTruncation = person.about.length > 80;
+                        const needsTruncation = person.about.length > 165;
                         aboutHTML = `
                             <div class="profile-about-wrapper">
                                 <p class="profile-about">${person.about}</p>
@@ -220,7 +226,7 @@
                 // Bind "more" clicks to open modal
                 $grid.on('click', '.profile-read-more', function () {
                     const idx = $(this).data('index');
-                    const person = PEOPLE_DATA[idx];
+                    const person = sortedPeople[idx];
                     openAboutModal(person.name, person.role, person.about);
                 });
             }

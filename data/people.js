@@ -4,7 +4,7 @@ const PEOPLE_DATA = [
         "name": "Ashashree Sarma",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
-        "about": "I am a researcher working at the intersection of learning sciences, network science, and machine learning, with a focus on understanding how peer interactions influence learning outcomes in online environments. My work explores how learners can be modeled as nodes in dynamic networks, where interactions facilitate knowledge diffusion, synchronization of learning behaviors, and collective improvement.  Currently, as an MS by Research student in Data Science at IIIT Bangalore, I am working on the Learners Navigator project in collaboration with Gooru Labs, where I investigate outcome-driven learner behavior and emergent social synchrony. My research combines network modeling, multi-agent systems, and machine learning to design mechanisms that optimize peer connections and improve learning trajectories.  A central theme of my work is to move beyond traditional student-teacher paradigms by modeling learning platforms as adaptive social systems, where learners themselves act as agents influencing one another\ufffds progress. Through simulation studies, graph-based models, and intervention strategies, I aim to identify optimal connection structures that maximize collective learning gains while maintaining scalable interaction costs.  My broader research interests include collaborative learning, multi-agent systems, recommender systems for education, and emergent behavior in complex networks. Ultimately, I aim to contribute toward designing intelligent learning ecosystems that support personalized, socially enriched learning experiences at scale.",
+        "about": "I am a researcher working at the intersection of learning sciences, network science, and machine learning, with a focus on understanding how peer interactions influence learning outcomes in online environments. My work explores how learners can be modeled as nodes in dynamic networks, where interactions facilitate knowledge diffusion, synchronization of learning behaviors, and collective improvement.  Currently, as an MS by Research student in Data Science at IIIT Bangalore, I am working on the Learners Navigator project in collaboration with Gooru Labs, where I investigate outcome-driven learner behavior and emergent social synchrony. My research combines network modeling, multi-agent systems, and machine learning to design mechanisms that optimize peer connections and improve learning trajectories.  A central theme of my work is to move beyond traditional student-teacher paradigms by modeling learning platforms as adaptive social systems, where learners themselves act as agents influencing one another's progress. Through simulation studies, graph-based models, and intervention strategies, I aim to identify optimal connection structures that maximize collective learning gains while maintaining scalable interaction costs.  My broader research interests include collaborative learning, multi-agent systems, recommender systems for education, and emergent behavior in complex networks. Ultimately, I aim to contribute toward designing intelligent learning ecosystems that support personalized, socially enriched learning experiences at scale.",
         "initials": "AS",
         "links": {
             "resume": "assets/Question 1/cv__ashashree07___RISE (1)_Ashashree Sarma.pdf",
@@ -40,7 +40,7 @@ const PEOPLE_DATA = [
         "name": "Phani Pavan K",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
-        "about": "A Final-year master\u2019s research scholar heading the algorithmic research and applications of neuromorphic computing at IIIT Bangalore. Experience researching spiking neural networks for neuromorphic computing, reinforcement learning based automation and embedded system. Diligent and collaborative researcher with multiple peer-reviewed publications. Looking to secure a doctoral scholar position in the field of neuromorphic computing and spiking neural networks.",
+        "about": "A Final-year master's research scholar heading the algorithmic research and applications of neuromorphic computing at IIIT Bangalore. Experience researching spiking neural networks for neuromorphic computing, reinforcement learning based automation and embedded system. Diligent and collaborative researcher with multiple peer-reviewed publications. Looking to secure a doctoral scholar position in the field of neuromorphic computing and spiking neural networks.",
         "initials": "PK",
         "links": {
             "resume": "assets/Question 1/phani_pavan_k_resume_phanipavan k.pdf",
@@ -112,7 +112,7 @@ const PEOPLE_DATA = [
         "name": "Sneha Dandekar",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
-        "about": "I am a second-year Master of Science by Research student at the International Institute of Information Technology Bangalore. My research focuses on hardware\u2013software co-optimization for efficient deep neural network acceleration. I work on designing and evaluating specialized hardware architectures to improve performance, energy efficiency, and silicon footprint for machine learning accelerators.",
+        "about": "I am a second-year Master of Science by Research student at the International Institute of Information Technology Bangalore. My research focuses on hardware-software co-optimization for efficient deep neural network acceleration. I work on designing and evaluating specialized hardware architectures to improve performance, energy efficiency, and silicon footprint for machine learning accelerators.",
         "initials": "SD",
         "links": {
             "resume": "assets/Question 1/Sneha_Dandekar_Resume_Dandekar Sneha Mahen.pdf",
@@ -244,7 +244,7 @@ const PEOPLE_DATA = [
         "name": "Arun M",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
-        "about": "Hi! I\ufffdm an MS by Research student researching the posit number format and its potential to power the next generation of efficient hardware accelerators for neural networks and large language models.",
+        "about": "Hi! I'm an MS by Research student researching the posit number format and its potential to power the next generation of efficient hardware accelerators for neural networks and large language models.",
         "initials": "AM",
         "links": {
             "resume": "assets/Question 1/Arun_M_Resume_Arun M.pdf",
@@ -316,7 +316,7 @@ const PEOPLE_DATA = [
         "name": "Sanjeeva R",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
-        "about": "I am a budding researcher driven by the excitement of radar system design and signal processing\ufffdan area few choose, yet one that offers unmatched intellectual thrill. I love exploring statistical estimation, sparse arrays, and optimization, and aspire to advance modern radar technology while making meaningful contributions to research community.",
+        "about": "I am a budding researcher driven by the excitement of radar system design and signal processing'an area few choose, yet one that offers unmatched intellectual thrill. I love exploring statistical estimation, sparse arrays, and optimization, and aspire to advance modern radar technology while making meaningful contributions to research community.",
         "initials": "SR",
         "links": {
             "resume": "assets/Question 1/Sanjeeva_Reddy_Resume_MS2025014 Sanjeeva R.pdf",
