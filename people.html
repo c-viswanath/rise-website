@@ -69,6 +69,16 @@
 
     </div><!-- end page-wrapper -->
 
+    <!-- ===== ABOUT MODAL ===== -->
+    <div class="about-modal-overlay" id="aboutModalOverlay">
+        <div class="about-modal-card">
+            <button class="about-modal-close" id="aboutModalClose">&times;</button>
+            <h3 class="about-modal-name" id="aboutModalName"></h3>
+            <p class="about-modal-role" id="aboutModalRole"></p>
+            <p class="about-modal-text" id="aboutModalText"></p>
+        </div>
+    </div>
+
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
@@ -141,6 +151,24 @@
                 resume: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path d="M14 3v5h5M16 13H8M16 17H8M10 9H8"/></svg>'
             };
 
+            // About modal helpers
+            function openAboutModal(name, role, about) {
+                $('#aboutModalName').text(name);
+                $('#aboutModalRole').text(role);
+                $('#aboutModalText').text(about);
+                $('#aboutModalOverlay').addClass('active');
+            }
+            function closeAboutModal() {
+                $('#aboutModalOverlay').removeClass('active');
+            }
+            $('#aboutModalClose').on('click', closeAboutModal);
+            $('#aboutModalOverlay').on('click', function (e) {
+                if (e.target === this) closeAboutModal();
+            });
+            $(document).on('keydown', function (e) {
+                if (e.key === 'Escape') closeAboutModal();
+            });
+
             // Render people from data
             if (typeof PEOPLE_DATA !== 'undefined') {
                 const $grid = $('#peopleGrid');
@@ -164,16 +192,36 @@
                         }
                     }
 
+                    // About section: truncated with CSS, "more" opens modal
+                    let aboutHTML = '';
+                    if (person.about) {
+                        const needsTruncation = person.about.length > 80;
+                        aboutHTML = `
+                            <div class="profile-about-wrapper">
+                                <p class="profile-about">${person.about}</p>
+                                ${needsTruncation ? `<span class="profile-read-more" data-index="${index}">more ›</span>` : ''}
+                            </div>
+                        `;
+                    }
+
                     const card = `
                         <div class="profile-card fade-in">
                             <div class="profile-avatar">${avatarContent}</div>
                             <h3 class="profile-name">${person.name}</h3>
                             <p class="profile-role">${person.role}</p>
                             <p class="profile-dept">${person.department}</p>
+                            ${aboutHTML}
                             ${linksHTML ? `<div class="profile-links">${linksHTML}</div>` : ''}
                         </div>
                     `;
                     $grid.append(card);
+                });
+
+                // Bind "more" clicks to open modal
+                $grid.on('click', '.profile-read-more', function () {
+                    const idx = $(this).data('index');
+                    const person = PEOPLE_DATA[idx];
+                    openAboutModal(person.name, person.role, person.about);
                 });
             }
 

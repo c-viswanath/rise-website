@@ -1585,6 +1585,10 @@ img {
     padding: 36px 28px;
     text-align: center;
     transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 420px;
 }
 
 .profile-card:hover {
@@ -1639,13 +1643,139 @@ img {
 .profile-dept {
     color: var(--gray-500);
     font-size: 0.8rem;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+}
+
+.profile-about-wrapper {
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 14px;
+    position: relative;
+}
+
+.profile-about {
+    font-size: 0.82rem;
+    color: var(--gray-400);
+    line-height: 1.5;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.profile-read-more {
+    display: inline-block;
+    color: var(--blue-glow);
+    font-weight: 600;
+    font-size: 0.78rem;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: color 0.2s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.profile-read-more:hover {
+    color: var(--blue-light);
+    text-decoration: underline;
+}
+
+/* About Modal Overlay */
+.about-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 24px;
+}
+
+.about-modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.about-modal-card {
+    position: relative;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.97), rgba(15, 23, 42, 0.99));
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    border-radius: 20px;
+    padding: 40px 36px;
+    max-width: 520px;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(96, 165, 250, 0.05);
+    transform: translateY(20px) scale(0.96);
+    transition: transform 0.3s ease;
+}
+
+.about-modal-overlay.active .about-modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.about-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--gray-300);
+    font-size: 1.4rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.about-modal-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    transform: rotate(90deg);
+}
+
+.about-modal-name {
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+}
+
+.about-modal-role {
+    color: var(--blue-light);
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.about-modal-text {
+    font-size: 0.9rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+    text-align: left;
 }
 
 .profile-links {
     display: flex;
     justify-content: center;
     gap: 12px;
+    margin-top: auto;
 }
 
 .profile-links a {

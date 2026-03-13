@@ -1,6 +1,7 @@
 import os
 import json
 import re
+import csv
 
 img_dir = 'Question'
 resume_dir = 'Question 1'
@@ -60,6 +61,39 @@ for res in resumes:
             'department': 'IIIT-Bangalore'
         }
 
+# Parse CSV
+csv_file = 'Scholars profile for RISE 2026 website(Sheet1).csv'
+if os.path.exists(csv_file):
+    with open(csv_file, 'r', encoding='utf-8', errors='replace') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            raw_name = row.get('Full name', '').strip()
+            if not raw_name:
+                raw_name = row.get('Name', '').strip()
+            
+            clean = clean_name(raw_name)
+            about = row.get('About yourself (as a researcher)', '').strip()
+            linkedin = row.get('Linkedin url', '').strip()
+            
+            # Match existing or create new
+            matched = False
+            for k in people_dict:
+                if clean.lower() in k.lower() or k.lower() in clean.lower():
+                    people_dict[k]['about'] = about
+                    people_dict[k]['linkedin'] = linkedin
+                    matched = True
+                    break
+            if not matched:
+                people_dict[clean] = {
+                    'photo': '',
+                    'resume': '',
+                    'name': clean,
+                    'role': 'MS/PhD Scholar',
+                    'department': 'IIIT-Bangalore',
+                    'about': about,
+                    'linkedin': linkedin
+                }
+
 people_list = list(people_dict.values())
 for p in people_list:
     parts = p['name'].split()
@@ -72,7 +106,8 @@ for p in people_list:
 # Wait, it doesn't have resume explicitly, but we can add website: resume
 for p in people_list:
     p['links'] = {
-        'resume': p.pop('resume', '')
+        'resume': p.pop('resume', ''),
+        'linkedin': p.pop('linkedin', '')
     }
 
 js_content = f"const PEOPLE_DATA = {json.dumps(people_list, indent=4)};\n"
