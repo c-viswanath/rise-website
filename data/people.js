@@ -37,13 +37,14 @@ const PEOPLE_DATA = [
     },
     {
         "photo": "assets/Question/phani_pavan_k_dp_phanipavan k.jpg",
-        "name": "Phanipavan K",
+        "name": "Phani Pavan K",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
+        "about": "A Final-year master\u2019s research scholar heading the algorithmic research and applications of neuromorphic computing at IIIT Bangalore. Experience researching spiking neural networks for neuromorphic computing, reinforcement learning based automation and embedded system. Diligent and collaborative researcher with multiple peer-reviewed publications. Looking to secure a doctoral scholar position in the field of neuromorphic computing and spiking neural networks.",
         "initials": "PK",
         "links": {
             "resume": "assets/Question 1/phani_pavan_k_resume_phanipavan k.pdf",
-            "linkedin": ""
+            "linkedin": "https://www.linkedin.com/in/mmipvn/"
         }
     },
     {
@@ -96,24 +97,26 @@ const PEOPLE_DATA = [
     },
     {
         "photo": "assets/Question/DSC_9880....jpg_Chandan Kumar NS.jpeg",
-        "name": "Chandan Kumar Ns",
+        "name": "Chandan Kumar N S",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
+        "about": "MS RESEARCHER IN VLSI DOMAIN",
         "initials": "CK",
         "links": {
             "resume": "assets/Question 1/MS2024007_Chandan Kumar NS.pdf",
-            "linkedin": ""
+            "linkedin": "https://www.linkedin.com/in/chandan-kumar-n-s-8578b521b"
         }
     },
     {
         "photo": "assets/Question/Sneha_Dandekar_DP_Dandekar Sneha Mahen.jpeg",
-        "name": "Dandekar Sneha Mahen",
+        "name": "Sneha Dandekar",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
-        "initials": "DS",
+        "about": "I am a second-year Master of Science by Research student at the International Institute of Information Technology Bangalore. My research focuses on hardware\u2013software co-optimization for efficient deep neural network acceleration. I work on designing and evaluating specialized hardware architectures to improve performance, energy efficiency, and silicon footprint for machine learning accelerators.",
+        "initials": "SD",
         "links": {
             "resume": "assets/Question 1/Sneha_Dandekar_Resume_Dandekar Sneha Mahen.pdf",
-            "linkedin": ""
+            "linkedin": "https://www.linkedin.com/in/sneha-dandekar-07/"
         }
     },
     {
@@ -169,6 +172,7 @@ const PEOPLE_DATA = [
         "name": "C Viswanath",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
+        "about": "Aspiring AI/ML researcher with research interests in NLP and LLMs. Current ongoing research focuses on principal alignment of language models and cross-cultural analysis of LLMs and their alignment.",
         "initials": "CV",
         "links": {
             "resume": "",
@@ -177,13 +181,14 @@ const PEOPLE_DATA = [
     },
     {
         "photo": "assets/Question/DEV_8940_Bery Gnanaraj.JPG",
-        "name": "Bery Gnanaraj",
+        "name": "Beryl Gnanaraj",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
+        "about": "I'm a PhD candidate, supervised by Prof. Jaya Sreevalsan Nair. My current research interests are eye tracking, clustering, statistical methods, population surveys and inferential statistics.",
         "initials": "BG",
         "links": {
             "resume": "assets/Question 1/Beryl_Gnanaraj_resume_Bery Gnanaraj.pdf",
-            "linkedin": ""
+            "linkedin": "https://in.linkedin.com/in/berylg"
         }
     },
     {
@@ -248,24 +253,26 @@ const PEOPLE_DATA = [
     },
     {
         "photo": "assets/Question/Yogita_Yogita Karke.png",
-        "name": "Yogita Karke",
+        "name": "Yogita Wilson Karke",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
-        "initials": "YK",
+        "about": "I am a PhD Research Scholar at IIITB. My research focuses on IoT networks, network slicing, optimization techniques for network resource allocation, AI-driven security frameworks, Post-Quantum Cryptography, and emerging 6G technologies.",
+        "initials": "YW",
         "links": {
             "resume": "assets/Question 1/Yogita_Karke_Resume_Yogita Karke.pdf",
-            "linkedin": ""
+            "linkedin": "https://www.linkedin.com/in/yogitawilson"
         }
     },
     {
         "photo": "assets/Question/Satvik_Viriyala_DP_MS2025020 Viriyala S.jpg",
-        "name": "Viriyala S",
+        "name": "Viriyala Venkata Satya Satvik",
         "role": "MS/PhD Scholar",
         "department": "IIIT-Bangalore",
-        "initials": "VS",
+        "about": "Researching AI Alignment & Utility-Preserving Safety in LLMs",
+        "initials": "VV",
         "links": {
             "resume": "",
-            "linkedin": ""
+            "linkedin": "https://www.linkedin.com/in/satvik-viriyala-436a4b219/"
         }
     },
     {
@@ -352,76 +359,4 @@ const PEOPLE_DATA = [
             "linkedin": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://in.linkedin.com/in/sai-shruti-prakhya-a1b0291b2"
         }
     },
-    {
-        "photo": "",
-        "name": "Beryl Gnanaraj",
-        "role": "MS/PhD Scholar",
-        "department": "IIIT-Bangalore",
-        "about": "I'm a PhD candidate, supervised by Prof. Jaya Sreevalsan Nair. My current research interests are eye tracking, clustering, statistical methods, population surveys and inferential statistics.",
-        "initials": "BG",
-        "links": {
-            "resume": "",
-            "linkedin": "https://in.linkedin.com/in/berylg"
-        }
-    },
-    {
-        "photo": "",
-        "name": "Phani Pavan K",
-        "role": "MS/PhD Scholar",
-        "department": "IIIT-Bangalore",
-        "about": "A Final-year master\ufffds research scholar heading the algorithmic research and applications of neuromorphic computing at IIIT Bangalore. Experience researching spiking neural networks for neuromorphic computing, reinforcement learning based automation and embedded system. Diligent and collaborative researcher with multiple peer-reviewed publications. Looking to secure a doctoral scholar position in the field of neuromorphic computing and spiking neural networks.",
-        "initials": "PP",
-        "links": {
-            "resume": "",
-            "linkedin": "https://www.linkedin.com/in/mmipvn/"
-        }
-    },
-    {
-        "photo": "",
-        "name": "Chandan Kumar N S",
-        "role": "MS/PhD Scholar",
-        "department": "IIIT-Bangalore",
-        "about": "MS RESEARCHER IN VLSI DOMAIN",
-        "initials": "CK",
-        "links": {
-            "resume": "",
-            "linkedin": "www.linkedin.com/in/chandan-kumar-n-s-8578b521b"
-        }
-    },
-    {
-        "photo": "",
-        "name": "Sneha Dandekar",
-        "role": "MS/PhD Scholar",
-        "department": "IIIT-Bangalore",
-        "about": "I am a second-year Master of Science by Research student at the International Institute of Information Technology Bangalore. My research focuses on hardware\ufffdsoftware co-optimization for efficient deep neural network acceleration. I work on designing and evaluating specialized hardware architectures to improve performance, energy efficiency, and silicon footprint for machine learning accelerators.",
-        "initials": "SD",
-        "links": {
-            "resume": "",
-            "linkedin": "https://www.linkedin.com/in/sneha-dandekar-07/"
-        }
-    },
-    {
-        "photo": "",
-        "name": "Yogita Wilson Karke",
-        "role": "MS/PhD Scholar",
-        "department": "IIIT-Bangalore",
-        "about": "I am a PhD Research Scholar at IIITB. My research focuses on IoT networks, network slicing, optimization techniques for network resource allocation, AI-driven security frameworks, Post-Quantum Cryptography, and emerging 6G technologies.",
-        "initials": "YW",
-        "links": {
-            "resume": "",
-            "linkedin": "linkedin.com/in/yogitawilson"
-        }
-    },
-    {
-        "photo": "",
-        "name": "Viriyala Venkata Satya Satvik",
-        "role": "MS/PhD Scholar",
-        "department": "IIIT-Bangalore",
-        "about": "Researching AI Alignment & Utility-Preserving Safety in LLMs",
-        "initials": "VV",
-        "links": {
-            "resume": "",
-            "linkedin": "https://www.linkedin.com/in/satvik-viriyala-436a4b219/"
-        }
-    }
 ];
